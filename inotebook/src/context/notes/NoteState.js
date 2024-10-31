@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import NoteContext from "./noteContext";
-import { useState } from "react";
 
 const NoteState = (props) => {
-  const host = "http://localhost:5000";
+  const host = "https://inotebookbackend-bj44.onrender.co";
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
