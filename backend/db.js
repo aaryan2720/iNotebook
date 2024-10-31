@@ -3,13 +3,17 @@ const mongoURI = process.env.MONGO_URI || 'mongodb+srv://aryan:shalini2720@clust
 
 const connectToMongo = async () => {
   try {
-    await mongoose.connect(mongoURI, {
-      serverSelectionTimeoutMS: 30000, // Timeout after 30 seconds
+    await mongoose.connect(mongoURI, { 
+      serverSelectionTimeoutMS: 30000, 
+      autoIndex: false,  // Avoids the createIndex timeout
+      authMechanismProperties: { 
+        // This disables saslprep
+        saslprep: false 
+      } 
     });
     console.log('Connected to MongoDB successfully');
   } catch (error) {
-    console.error('Error connecting to MongoDB:', error.message || error);
-    process.exit(1); // Exit process if unable to connect
+    console.error('Error connecting to MongoDB:', error);
   }
 };
 
