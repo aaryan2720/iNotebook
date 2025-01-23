@@ -29,7 +29,7 @@ const Signup = (props) => {
       }
 
       // Assuming you have a signup endpoint at "http://localhost:5000/api/auth/createuser"
-      const response = await fetch("http://localhost:5000/api/auth/createuser", {
+      const response = await fetch("https://inotebook-rzly.onrender.com/api/auth/createuser", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
