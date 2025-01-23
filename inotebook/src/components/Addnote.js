@@ -6,15 +6,18 @@ const Addnote = (props) => {
   const { addNote } = context;
   const [note, setNote] = useState({ title: '', description: '', tag: '' });
 
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
-    addNote(note.title, note.description, note.tag);
-    setNote({ title: '', description: '', tag: '' });
-    props.showAlert("Note Added Successfully" , "success");
-
+    try {
+      await addNote(note.title, note.description, note.tag);
+      setNote({ title: '', description: '', tag: '' });
+      props.showAlert("Note Added Successfully", "success");
+    } catch (error) {
+      props.showAlert("Error adding note", "danger");
+    }
   };
 
-  const onChange= (e) => {
+  const onChange = (e) => {
     setNote({ ...note, [e.target.name]: e.target.value });
   };
 
@@ -32,8 +35,9 @@ const Addnote = (props) => {
               placeholder="Enter title"
               minLength={5}
               required
-              name="title" value={note.title}
-              onChange={onChange} // corrected to use onChange instead of onchange
+              name="title"
+              value={note.title}
+              onChange={onChange}
             />
           </div>
           <div className="form-group my-3">
@@ -45,8 +49,9 @@ const Addnote = (props) => {
               placeholder="Enter description"
               required
               minLength={5}
-              id="description"value={note.description}
-              onChange={onChange} // corrected to use onChange instead of onchange
+              id="description"
+              value={note.description}
+              onChange={onChange}
             />
           </div>
           <div className="form-group my-3">
@@ -56,8 +61,9 @@ const Addnote = (props) => {
               className="form-control"
               name="tag"
               placeholder="Enter Tags"
-              id="tag"value={note.tag}
-              onChange={onChange} // corrected to use onChange instead of onchange
+              id="tag"
+              value={note.tag}
+              onChange={onChange}
             />
           </div>
           <button type="submit" className="btn btn-primary my-3" onClick={handleClick}>
