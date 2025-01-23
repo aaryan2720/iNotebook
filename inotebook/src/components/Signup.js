@@ -108,6 +108,9 @@ const Signup = (props) => {
             className="form-control"
             id="password"
           />
+          <div id="passHelp" className="form-text">
+          Ensure your password is a powerhouse: Pack it with one Capital Letter, one small letter, and a dash of flair with a special character!
+          </div>
         </div>
 
         <div className="mb-3">
