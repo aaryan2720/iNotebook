@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div style={styles.container}>
       <div style={styles.content}>
-        <h1 style={styles.heading}>About iNotebook</h1>
+        <h1 style={styles.heading}>AboutiNotebook</h1>
         <p style={styles.description}>
           Welcome to <strong>iNotebook</strong>! Your one-stop solution for managing your notes efficiently and securely. Whether you're a student, professional, or someone who loves staying organized, iNotebook is designed to simplify your life.
         </p>
