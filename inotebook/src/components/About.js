@@ -21,7 +21,7 @@ const About = () => {
           iNotebook stands out for its simplicity, reliability, and user-friendly interface. Stay productive and organized without worrying about managing physical notebooks or cluttered apps. With iNotebook, all your notes are just a click away.
         </p>
         <p style={styles.footer}>
-          <strong>Start your journey with iNotebook today!</strong>
+          <strong>Start your journey with iNotebook today amd Now!</strong>
         </p>
       </div>
     </div>
