@@ -28,6 +28,7 @@ const About = () => {
   );
 };
 
+
 const styles = {
   container: {
     display: "flex",
